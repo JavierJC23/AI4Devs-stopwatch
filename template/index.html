@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timer and Countdown</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Application</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Timer and Countdown</h1>
-<script src="script.js"></script>
+    <!-- Main container for all timer content -->
+    <div class="container">
+        <!-- Header with website title -->
+        <header>
+            <h1>Timer Application</h1>
+        </header>
+
+        <!-- Initial selection screen -->
+        <div id="selection-screen" class="screen active">
+            <div class="selection-container">
+                <div class="option" id="stopwatch-option">
+                    <h2>Stopwatch</h2>
+                    <div class="icon up-arrow"></div>
+                </div>
+                <div class="option" id="countdown-option">
+                    <h2>Countdown</h2>
+                    <div class="icon down-arrow"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stopwatch screen -->
+        <div id="stopwatch-screen" class="screen">
+            <div class="timer-display">
+                <span id="stopwatch-display">00:00:00</span>
+                <span class="milliseconds" id="stopwatch-ms">000</span>
+            </div>
+            <div class="controls">
+                <button id="stopwatch-start" class="control-btn start-btn">Start</button>
+                <button id="stopwatch-clear" class="control-btn clear-btn">Clear</button>
+            </div>
+            <div class="navigation">
+                <button id="stopwatch-back" class="back-btn">Back</button>
+            </div>
+        </div>
+
+        <!-- Countdown screen - Number input mode -->
+        <div id="countdown-screen-input" class="screen">
+            <div class="timer-display">
+                <span id="countdown-display">00:00:00</span>
+                <span class="milliseconds" id="countdown-ms">000</span>
+            </div>
+            <div class="digit-buttons">
+                <div class="digit-row">
+                    <button class="digit-btn" data-digit="5">5</button>
+                    <button class="digit-btn" data-digit="6">6</button>
+                    <button class="digit-btn" data-digit="7">7</button>
+                    <button class="digit-btn" data-digit="8">8</button>
+                    <button class="digit-btn" data-digit="9">9</button>
+                    <button id="countdown-set" class="digit-btn set-btn">Set</button>
+                </div>
+                <div class="digit-row">
+                    <button class="digit-btn" data-digit="0">0</button>
+                    <button class="digit-btn" data-digit="1">1</button>
+                    <button class="digit-btn" data-digit="2">2</button>
+                    <button class="digit-btn" data-digit="3">3</button>
+                    <button class="digit-btn" data-digit="4">4</button>
+                    <button id="countdown-clear-input" class="digit-btn clear-btn">Clear</button>
+                </div>
+            </div>
+            <div class="navigation">
+                <button id="countdown-back" class="back-btn">Back</button>
+            </div>
+        </div>
+
+        <!-- Countdown screen - Running mode -->
+        <div id="countdown-screen-running" class="screen">
+            <div id="countdown-display-container" class="timer-display">
+                <span id="countdown-display-running">00:00:00</span>
+                <span class="milliseconds" id="countdown-running-ms">000</span>
+            </div>
+            <div class="controls">
+                <button id="countdown-start" class="control-btn start-btn">Start</button>
+                <button id="countdown-clear" class="control-btn clear-btn">Clear</button>
+                <button id="countdown-reset" class="control-btn reset-btn">Reset Time</button>
+            </div>
+            <div class="navigation">
+                <button id="countdown-running-back" class="back-btn">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
